@@ -1,8 +1,8 @@
 # name: Watch Category
 # about: Watches a category for all the users in a particular group
 # version: 0.3
-# authors: Arpit Jalan
-# url: https://github.com/discourse/discourse-watch-category-mcneel
+# authors: fork of work by Arpit Jalan
+# url: https://github.com/folio-org/discourse-watch-category
 
 module ::WatchCategory
 
