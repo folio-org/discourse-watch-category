@@ -7,42 +7,18 @@
 module ::WatchCategory
 
   def self.watch_category!
-    groups_cats = {
+    groups_cats_watching = {
       # "group" => ["category", "another-top-level-category", ["parent-category", "sub-category"] ],
-      "coordinating-cmte" => [ ["private", "coordinating-committee"] ],
-      "digcol-cmte" => [ ["private", "digital-collections-committee"] ],
-      "digped-cmte" => [ ["private", "digital-pedagogy-committee"] ],
-      "digschol-cmte" => [ ["private", "digital-scholarship-committee"] ],
-      "eresources-cmte" => [ ["private", "e-resources-committee"], ["private", "buyers-group"] ],
-      "infolit-cmte" => [ ["private", "information-literacy-committee"] ],
-      "inst-research-cmte" => [ ["private", "institutional-research-assessment-committee"] ],
-      "oclc-cmte" => [ ["private", "oclc-programs-committee"] ],
-      "profdev-cmte" => [ ["private", "professional-development-committee"] ],
-      "grant-review-cmte" => [ ["private", "grant-review-cmte"] ],
-      "amical-2018-joint-org" => [ ["private", "amical-2018-joint-org"] ],
-      "amical-2018-program-cmte" => [ ["private", "amical-2018-program-cmte"] ],
-      "amical-2019-joint-org" => [ ["private", "amical-2019-joint-org"] ],
-      "amical-2019-program-cmte" => [ ["private", "amical-2019-program-cmte"] ],
-      "dhsi-2018-cohort" => [ ["private", "dhsi-2018-cohort"] ],
-      "dhi-b-2019-cohort" => [ ["private", "dhi-b-2019-cohort"] ],
-      "chairs" => [ ["private", "chairs"] ],
-      "facdevcenters" => [ ["private", "facdevcenters"] ]
+      "translators" => [ ["software", "translators"] ],
       # "everyone" makes every user watch the listed categories
       # "everyone" => [ "announcements" ]
     }
-    WatchCategory.change_notification_pref_for_group(groups_cats, :watching)
+    WatchCategory.change_notification_pref_for_group(groups_cats_watching, :watching)
 
-    groups_cats = {
-      "infolit" => [ ["interest-groups", "information-literacy"] ],
-      "pedagogy" => [ ["interest-groups", "pedagogy"] ],
-      "amical-2019" => [ ["interest-groups", "amical-2019"] ],
-      "open-source-library-systems" => [ ["interest-groups", "open-source-library-systems"] ],
-      "digital-literacy" => [ ["interest-groups", "digital-literacy"] ],
-      "coordinating-cmte" => [ "announcements" ],
-      "representatives" => [ "announcements" ],
-      "lib-buyers" => [ ["private", "buyers-group"] ]
+    groups_cats_first_post = {
+      # "group" => ["category", "another-top-level-category", ["parent-category", "sub-category"] ],
     }
-    WatchCategory.change_notification_pref_for_group(groups_cats, :watching_first_post)
+    WatchCategory.change_notification_pref_for_group(groups_cats_first_post, :watching_first_post)
   end
 
   def self.change_notification_pref_for_group(groups_cats, pref)
